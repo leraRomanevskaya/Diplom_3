@@ -1,3 +1,4 @@
+URL_AUTH_REGISTER = 'https://stellarburgers.nomoreparties.site/api/auth/register'
 URL_HOME = 'https://stellarburgers.nomoreparties.site/'
 URL_ORDERS_FEED = 'https://stellarburgers.nomoreparties.site/feed'
 URL_LOGIN = 'https://stellarburgers.nomoreparties.site/login'

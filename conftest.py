@@ -1,7 +1,7 @@
-import methods
 import pytest
 
-from methods import generate_user_credentials
+from api_methods import generate_user_credentials
+from api_methods import register_user as api_register_user
 from pages.feed_page import FeedPage
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
@@ -58,8 +58,7 @@ def feed_page(driver):
 @pytest.fixture()
 def register_user(driver):
     credentials = generate_user_credentials()
-    register_response = methods.register_user(credentials)
-    assert register_response.status_code == 200
+    api_register_user(credentials)
     return {
         'credentials': credentials
     }

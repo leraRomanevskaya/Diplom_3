@@ -46,3 +46,14 @@ class MainPage(BasePage):
         ingredient = self.get_first_ingredient_link()
         top_slot = self.find_element(MainPageLocators.DIV_INGREDIENT_TOP_SLOT)
         self.drag_and_drop(ingredient, top_slot)
+
+    @allure.step('Создаём заказ')
+    def create_order(self, credentials):
+        self.drag_and_drop_first_ingredient_onto_top_slot()
+        self.get_create_order_button().click()
+        order_id = self.wait_for_text_not_equals(15, MainPageLocators.TEXT_MODAL_ORDER_NUMBER, '9999')
+        self.get_modal_close_button().click()
+        return {
+            'credentials': credentials,
+            'order_id': order_id
+        }

@@ -21,14 +21,6 @@ class FeedPage(BasePage):
     def get_first_order_link(self):
         return self.find_element(FeedPageLocators.LINK_FIRST_ORDER)
 
-    @allure.step('Получить значение счётчика "Выполнено за все время"')
-    def get_done_by_all_time_counter(self):
-        return self.find_element(FeedPageLocators.TEXT_COUNTER_DONE_BY_ALL_TIME).text
-
-    @allure.step('Получить значение счётчика "Выполнено за сегодня"')
-    def get_done_by_today_counter(self):
-        return self.find_element(FeedPageLocators.TEXT_COUNTER_DONE_BY_TODAY).text
-
     @allure.step('Получить список номеров заказов из ленты')
     def get_orders_ids(self):
         orders = self.find_elements(FeedPageLocators.TEXT_ORDER_ID)
